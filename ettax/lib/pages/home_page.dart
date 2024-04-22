@@ -2,20 +2,45 @@ import 'package:ettax/components/my_nav_bar.dart';
 import 'package:ettax/components/news_feeds.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
-class HomePage extends StatelessWidget {
+import '../services/auth_services.dart';
+
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+   void signOut() {
+    final authService = Provider.of<AuthServices>(context, listen: false);
+    authService.signout();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.more_vert),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: signOut,
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
             child: Column(
           children: [
             Center(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(30, 30, 30, 10),
+                padding: const EdgeInsets.fromLTRB(30, 30, 15, 10),
                 child: Row(
                   children: [
                     IconButton(

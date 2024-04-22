@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDc8dJj5Yyg-BzeC9Tlm48lvtvFe-y3JoQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>336448762770</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.ettax</string>
+	<key>PROJECT_ID</key>
+	<string>ettax-1d3ca</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ettax-1d3ca.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:336448762770:ios:fc427ed2d2ade6d64a874b</string>
+</dict>
+</plist>

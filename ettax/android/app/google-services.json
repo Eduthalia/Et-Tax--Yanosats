@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "336448762770",
+    "project_id": "ettax-1d3ca",
+    "storage_bucket": "ettax-1d3ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336448762770:android:f03f071da57c96ed4a874b",
+        "android_client_info": {
+          "package_name": "com.example.ettax"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHKu8jFms0VfJ5GEkPynIfwlhcv0BGJnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
