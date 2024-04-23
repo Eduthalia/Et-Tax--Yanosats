@@ -43,17 +43,13 @@ class _LoginState extends State<Login> {
                     height: 50,
                   ),
                   //logo if nedded
-                  const Icon(
-                    Icons.login,
-                    size: 100.0,
-                    color: Colors.black,
-                  ),
+                  Image.asset("images/etax_logo.jpeg"),
                   const SizedBox(
                     height: 50,
                   ),
                   //welcome text
                   const Text(
-                    "Hey Good to see you again!",
+                    "Welocome To e-tax",
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
@@ -61,7 +57,7 @@ class _LoginState extends State<Login> {
                   ),
                   //sub welcome
                   const Text(
-                    "You have been Missed!!",
+                    "Where you pay your TAX with ease!!",
                     style: TextStyle(
                       fontSize: 16,
                     ),
@@ -96,7 +92,7 @@ class _LoginState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text("Forget Password?", style: TextStyle(
-                        color: Color.fromARGB(255, 68, 140, 208),
+                        color: Color.fromARGB(255, 25, 85, 204),
                       ),),
                     ],
                   ),
@@ -128,10 +124,10 @@ class _LoginState extends State<Login> {
                       GestureDetector(
                         onTap: widget.ontap,
                         child: const Text(
-                          "Register Now!",
+                          "General Informations!",
                           style: TextStyle(
                             fontSize: 16,
-                            color: Color.fromARGB(255, 68, 140, 208),
+                            color: Color.fromARGB(255, 25, 85, 204),
                             fontWeight: FontWeight.bold,
                             decoration: TextDecoration.underline,
                           ),

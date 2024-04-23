@@ -1,9 +1,9 @@
-import 'package:ettax/pages/home_page.dart';
 import 'package:ettax/services/auth_gate.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'firebase_options.dart';
+import 'firebase_options.dart'; 
+import 'pages/income_form.dart';
 import 'services/auth_services.dart';
 
 void main() async {
@@ -21,9 +21,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      routes: {
+        '/Income': (context) => const IcomeForm(), // Define the income_list route
+        // Define other routes here...
+      },
       debugShowCheckedModeBanner: false,
-      home: AuthGate(),
+      home: const AuthGate(),
     );
   }
 }

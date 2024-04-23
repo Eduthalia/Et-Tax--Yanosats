@@ -1,7 +1,7 @@
 import 'package:ettax/components/my_nav_bar.dart';
+import 'package:ettax/components/tax_page_container.dart';
+import 'package:ettax/pages/customer_list.dart';
 import 'package:flutter/material.dart';
-
-import 'income_form.dart';
 
 class Income extends StatefulWidget {
   const Income({super.key});
@@ -11,7 +11,13 @@ class Income extends StatefulWidget {
 }
 
 class _IncomeState extends State<Income> {
-  String selectedButton = '';
+  final routeMap = {
+    'Income': '/Income',
+    'VAT': '/vat_detail',
+    'With-Holding': '/withholding_detail',
+    'Pension': '/pension_detail',
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +28,7 @@ class _IncomeState extends State<Income> {
             },
             icon: const Icon(Icons.arrow_back_ios)),
         title: const Text(
-          'Income',
+          'VAT',
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,
@@ -62,7 +68,7 @@ class _IncomeState extends State<Income> {
                       top: 10,
                       left: 20,
                       child: Text(
-                        'Easy Use',
+                        "Easy to Use",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,
@@ -82,17 +88,15 @@ class _IncomeState extends State<Income> {
                               Column(
                                 children: [
                                   IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        selectedButton = 'Income';
-                                      });
-                                    },
                                     icon: const Icon(Icons.money),
                                     color: Colors.white,
+                                    onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const CustomerList()));
+                                    },
                                   ),
                                   const SizedBox(height: 5),
                                   const Text(
-                                    'Icome',
+                                    "Income",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 12,
@@ -100,77 +104,65 @@ class _IncomeState extends State<Income> {
                                   ),
                                 ],
                               ),
-                              Column(
-                                children: [
-                                  IconButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          selectedButton = 'VAT';
-                                        });
-                                      },
-                                      icon: const Icon(Icons.percent),
-                                      color: Colors.white),
-                                  const SizedBox(height: 5),
-                                  const Text(
-                                    'VAT',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
+                              Center(
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.5, // Adjust the width as needed
+                                      child: const Text(
+                                        "The Personal Income Tax Rate in Ethiopia stands at 35 percent. Personal Income Tax Rate in Ethiopia averaged 35.00 percent from 2006 until 2022",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 12,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  IconButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          selectedButton = 'With-Holding';
-                                        });
-                                      },
-                                      icon:
-                                          const Icon(Icons.oil_barrel_outlined),
-                                      color: Colors.white),
-                                  const SizedBox(height: 5),
-                                  const Text(
-                                    'With-Holding',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  IconButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          selectedButton = 'Pension';
-                                        });
-                                      },
-                                      icon: const Icon(Icons.person_2_rounded),
-                                      color: Colors.white),
-                                  const SizedBox(height: 5),
-                                  const Text(
-                                    'Pension',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ],
                           ),
                         ),
                         const SizedBox(height: 10),
                       ],
-                    ), 
+                    ),
                   ],
                 ),
               ),
-              if (selectedButton == 'Income') const IcomeForm()
+
+              // TaxPageContainer(
+              //   text:
+              //      "The Personal Income Tax Rate in Ethiopia stands at 35 percent. Personal Income Tax Rate in Ethiopia averaged 35.00 percent from 2006 until 2022.",
+              //   iconData: Icons.money,
+              //   iconname: "Income",
+              //   title: "Easy to Use",
+              //   routeMap: routeMap,
+              // ),
+              TaxPageContainer(
+                text:
+                    "VAT is a consumption tax that is charged on the supply of taxable goods or services made in Ethiopia and on the importation of taxable goods or services into Ethiopia.",
+                iconData: Icons.percent,
+                iconname: "VAT",
+                title: "Convient",
+                routeMap: routeMap,
+              ),
+              TaxPageContainer(
+                text:
+                    "The Ethiopian Taxation system has two major categories: direct and indirect taxes. All tax types in the Ethiopian tax system are described and explained as follows. ",
+                iconData: Icons.oil_barrel_outlined,
+                iconname: "With-Holding",
+                title: "Time Saving",
+                routeMap: routeMap,
+              ),
+              TaxPageContainer(
+                text:
+                    "The contributions payable to the Private Organizations Pension Fund shall, based on the employee's salary, be: By the employer, 11%; • By the employee, 7%.",
+                iconData: Icons.person_2_rounded,
+                iconname: "Pension",
+                title: "Appealing",
+                routeMap: routeMap,
+              )
             ],
           ),
         ),
