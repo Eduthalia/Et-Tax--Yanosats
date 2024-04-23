@@ -67,10 +67,10 @@ class _LoginState extends State<Login> {
                   ),
                   //input fields 1
                   MyTextField(
-                    hintText: "Enter your Email",
+                    hintText: "Enter your TIN",
                     controllers: emailcontroller,
                     obscureText: false,
-                    leftIcon: Icons.mail,
+                    leftIcon: Icons.numbers_rounded,
                     iconColor: Colors.grey,
                   ),
                   const SizedBox(
@@ -87,14 +87,6 @@ class _LoginState extends State<Login> {
                   ),
                   const SizedBox(
                     height: 10,
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text("Forget Password?", style: TextStyle(
-                        color: Color.fromARGB(255, 25, 85, 204),
-                      ),),
-                    ],
                   ),
                   const SizedBox(
                     height: 25,
