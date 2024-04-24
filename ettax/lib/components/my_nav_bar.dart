@@ -1,6 +1,7 @@
 import 'package:ettax/pages/home_page.dart';
 import 'package:ettax/pages/income.dart';
 import 'package:ettax/pages/invoics_page_create.dart';
+import 'package:ettax/pages/transactions_pending.dart';
 import 'package:flutter/material.dart';
 
 class MyNavBar extends StatefulWidget {
@@ -63,7 +64,8 @@ class _MyNavBarState extends State<MyNavBar> {
                 context, MaterialPageRoute(builder: (context) => const InvoicePage()));
             break;
           case 3:
-            // Navigator.pushReplacementNamed(context, '/profile');
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => const TransactionPending()));
             break;
           case 4:
             // Navigator.pushReplacementNamed(context, '/calls');

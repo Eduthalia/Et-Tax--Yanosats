@@ -32,6 +32,7 @@ class _InvoicePageUploadState extends State<InvoicePageUpload> {
     final tinController = TextEditingController();
     final nameController = TextEditingController();
     void saveInvoice() async {
+      // ignore: unused_local_variable
       String resp = await services.saveInvoiceImage(
           nameController.text, _image!, tinController.text);
     }
@@ -97,7 +98,7 @@ class _InvoicePageUploadState extends State<InvoicePageUpload> {
               ],
             ),
             const SizedBox(
-              height: 230,
+              height: 150,
             ),
             Stack(
               children: [
@@ -161,7 +162,7 @@ class _InvoicePageUploadState extends State<InvoicePageUpload> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 50,
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(100, 0, 100, 0),
