@@ -38,8 +38,8 @@ class _MyNavBarState extends State<MyNavBar> {
           label: 'Invoice',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: "Profile",
+          icon: Icon(Icons.alarm_on),
+          label: "Reminder",
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.people_alt),

@@ -3,7 +3,6 @@ import 'package:ettax/components/my_nav_bar.dart';
 import 'package:ettax/pages/transactions_pending.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../components/transactions_container.dart';
 
 class TransactionDone extends StatelessWidget {
@@ -11,7 +10,6 @@ class TransactionDone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int counter = 2;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(

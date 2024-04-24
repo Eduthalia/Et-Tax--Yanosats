@@ -115,13 +115,14 @@ class _TransactionPendingState extends State<TransactionPending> {
                             status == "done" ? Colors.green : Colors.red;
                         Color textColor = status == 'done'
                             ? Colors.black
-                            : const Color.fromARGB(255, 114, 172, 216);
+                            : Colors.black;
                         Color backgroundColor =
-                            status == 'done' ? Colors.white : Colors.black;
+                            status == 'done' ? Colors.white : Colors.white;
                         Color shadowColor = status == 'done'
                             ? const Color.fromARGB(255, 114, 172, 216)
                                 .withOpacity(0.4)
-                            : Colors.black.withOpacity(0.6);
+                            : const Color.fromARGB(255, 114, 172, 216)
+                                .withOpacity(0.4);
 
                         IconData iconName = status == 'done'
                             ? Icons.done_all
