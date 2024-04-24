@@ -1,5 +1,6 @@
 import 'package:ettax/pages/home_page.dart';
 import 'package:ettax/pages/income.dart';
+import 'package:ettax/pages/invoics_page_create.dart';
 import 'package:flutter/material.dart';
 
 class MyNavBar extends StatefulWidget {
@@ -33,7 +34,7 @@ class _MyNavBarState extends State<MyNavBar> {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.summarize),
-          label: 'Report',
+          label: 'Invoice',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person),
@@ -58,8 +59,8 @@ class _MyNavBarState extends State<MyNavBar> {
                 context, MaterialPageRoute(builder: (context) => const Income()));
             break;
           case 2:
-          //  Navigator.push(
-          //       context, MaterialPageRoute(builder: (context) => const ConsultantPage()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => const InvoicePage()));
             break;
           case 3:
             // Navigator.pushReplacementNamed(context, '/profile');
