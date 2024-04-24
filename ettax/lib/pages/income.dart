@@ -28,7 +28,7 @@ class _IncomeState extends State<Income> {
             },
             icon: const Icon(Icons.arrow_back_ios)),
         title: const Text(
-          'VAT',
+          'TAX Services',
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,
@@ -154,6 +154,8 @@ class _IncomeState extends State<Income> {
                 iconname: "With-Holding",
                 title: "Time Saving",
                 routeMap: routeMap,
+                backgroundColor: Colors.black,
+                shadowColor: Colors.black.withOpacity(0.2),
               ),
               TaxPageContainer(
                 text:

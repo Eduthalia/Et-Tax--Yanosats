@@ -6,18 +6,28 @@ class TaxPageContainer extends StatelessWidget {
   final String iconname;
   final String title;
   final Map<String, String> routeMap;
+  final Color? backgroundColor;
+  final Color? shadowColor;
 
   const TaxPageContainer({
-    super.key,
+    Key? key,
     required this.text,
     required this.iconData,
     required this.iconname,
     required this.title,
     required this.routeMap,
-  });
+    this.backgroundColor,
+    this.shadowColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Color textColor = Colors.black; // Default text color
+    if (backgroundColor != null && shadowColor != null) {
+      // If background and shadow colors are provided, change text color
+      textColor = Colors.white; // Change text color to white
+    }
+
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Stack(
@@ -26,14 +36,18 @@ class TaxPageContainer extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.2,
             decoration: BoxDecoration(
-              color: Colors.black,
+              color: backgroundColor ??
+                  Colors
+                      .white, // Use provided background color or default to white
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.2),
+                  color: shadowColor ??
+                      const Color.fromARGB(255, 114, 172, 216).withOpacity(
+                          0.6), // Use provided shadow color or default to a color
                   spreadRadius: 10,
                   blurRadius: 20,
-                  offset: const Offset(0, 3), // changes position of shadow
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
@@ -43,8 +57,8 @@ class TaxPageContainer extends StatelessWidget {
             left: 20,
             child: Text(
               title,
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: textColor, // Use determined text color
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -71,14 +85,14 @@ class TaxPageContainer extends StatelessWidget {
                         children: [
                           IconButton(
                             icon: Icon(iconData),
-                            color: Colors.white,
+                            color: textColor, // Use determined text color
                             onPressed: () {},
                           ),
                           const SizedBox(height: 5),
                           Text(
                             iconname,
-                            style: const TextStyle(
-                              color: Colors.white,
+                            style: TextStyle(
+                              color: textColor, // Use determined text color
                               fontSize: 12,
                             ),
                           ),
@@ -93,8 +107,8 @@ class TaxPageContainer extends StatelessWidget {
                                 0.5, // Adjust the width as needed
                             child: Text(
                               text,
-                              style: const TextStyle(
-                                color: Colors.white,
+                              style: TextStyle(
+                                color: textColor, // Use determined text color
                                 fontSize: 12,
                               ),
                             ),

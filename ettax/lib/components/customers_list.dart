@@ -1,18 +1,52 @@
 import 'package:flutter/material.dart';
 
 class CustomersLists extends StatelessWidget {
-  final String customerName;
-  final String tin;
-  final String income;
-  final String vat;
-
   const CustomersLists({
-    super.key,
+    Key? key,
     required this.customerName,
     required this.tin,
     required this.income,
     required this.vat,
-  });
+    this.backgroundColor,
+    this.shadowColor,
+    this.textColor,
+  }) : super(key: key);
+
+  final Color? backgroundColor;
+  final String customerName;
+  final String income;
+  final Color? shadowColor;
+  final Color? textColor;
+  final String tin;
+  final String vat;
+
+  Widget _buildIconButton(IconData iconData, String data, String description) {
+    return Column(
+      children: [
+        Text(
+          description,
+          style: TextStyle(
+            color: textColor ?? Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        IconButton(
+          icon: Icon(iconData),
+          color: textColor ?? Colors.white,
+          onPressed: () {},
+        ),
+        Text(
+          data,
+          style: TextStyle(
+            color: textColor ?? Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        )
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +58,11 @@ class CustomersLists extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.2,
             decoration: BoxDecoration(
-              color: Colors.black,
+              color: backgroundColor ?? Colors.black,
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.2),
+                  color: shadowColor ?? Colors.black.withOpacity(0.2),
                   spreadRadius: 10,
                   blurRadius: 20,
                   offset: const Offset(0, 3), // changes position of shadow
@@ -41,8 +75,8 @@ class CustomersLists extends StatelessWidget {
             left: 20,
             child: Text(
               customerName,
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: textColor ?? Colors.white,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -94,34 +128,6 @@ class CustomersLists extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildIconButton(IconData iconData, String data, String description) {
-    return Column(
-      children: [
-        Text(
-          description,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        IconButton(
-          icon: Icon(iconData),
-          color: Colors.white,
-          onPressed: () {},
-        ),
-        Text(
-          data,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        )
-      ],
     );
   }
 }

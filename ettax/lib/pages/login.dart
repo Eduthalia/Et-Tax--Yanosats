@@ -49,7 +49,7 @@ class _LoginState extends State<Login> {
                   ),
                   //welcome text
                   const Text(
-                    "Welocome To e-tax",
+                    "Welocome To Et-tax",
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(

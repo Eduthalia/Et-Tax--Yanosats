@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                     Column(
                       children: [
                         Text(
-                          "Hello Mr William Simons",
+                          "Hello Customer",
                           style: GoogleFonts.acme(
                             fontSize: 25,
                             fontWeight: FontWeight.w600,
@@ -158,11 +158,11 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 IconButton(
                                     onPressed: () {},
-                                    icon: const Icon(Icons.delete),
+                                    icon: const Icon(Icons.money),
                                     color: Colors.white),
                                 const SizedBox(height: 5),
                                 const Text(
-                                  'Delete',
+                                  'Income',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 12,
@@ -174,11 +174,11 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 IconButton(
                                     onPressed: () {},
-                                    icon: const Icon(Icons.numbers_outlined),
+                                    icon: const Icon(Icons.computer_rounded),
                                     color: Colors.white),
                                 const SizedBox(height: 5),
                                 const Text(
-                                  'Sales',
+                                  'AI',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 12,
