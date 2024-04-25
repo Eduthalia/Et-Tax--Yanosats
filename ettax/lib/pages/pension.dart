@@ -3,10 +3,8 @@ import 'package:ettax/components/customers_list.dart';
 import 'package:ettax/pages/search_page.dart';
 import 'package:flutter/material.dart';
 
-import 'add_customer.dart';
-
-class CustomerList extends StatelessWidget {
-  const CustomerList({Key? key});
+class Pension extends StatelessWidget {
+  const Pension({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -111,29 +109,6 @@ class CustomerList extends StatelessWidget {
                       },
                     ),
                   ],
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.black, // text color
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const AddCustomer()));
-              },
-              child: const Text(
-                'Add Client',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),

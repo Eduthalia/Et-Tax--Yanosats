@@ -25,7 +25,7 @@ class TaxPageContainer extends StatelessWidget {
     Color textColor = Colors.black; // Default text color
     if (backgroundColor != null && shadowColor != null) {
       // If background and shadow colors are provided, change text color
-      textColor = Colors.white; // Change text color to white
+      textColor = Colors.black; // Change text color to white
     }
 
     return Padding(

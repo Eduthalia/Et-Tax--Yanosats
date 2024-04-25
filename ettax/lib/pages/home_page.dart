@@ -1,5 +1,9 @@
+import 'package:ettax/components/faq_page.dart';
 import 'package:ettax/components/my_nav_bar.dart';
 import 'package:ettax/components/news_feeds.dart';
+import 'package:ettax/pages/add_customer.dart';
+import 'package:ettax/pages/pension.dart';
+import 'package:ettax/pages/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   void signOut() {
+  void signOut() {
     final authService = Provider.of<AuthServices>(context, listen: false);
     authService.signout();
   }
@@ -124,7 +128,13 @@ class _HomePageState extends State<HomePage> {
                             Column(
                               children: [
                                 IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const AddCustomer()));
+                                  },
                                   icon: const Icon(Icons.add),
                                   color: Colors.white,
                                 ),
@@ -141,7 +151,13 @@ class _HomePageState extends State<HomePage> {
                             Column(
                               children: [
                                 IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SearchPage()));
+                                    },
                                     icon: const Icon(Icons.search),
                                     color: Colors.white),
                                 const SizedBox(height: 5),
@@ -157,12 +173,18 @@ class _HomePageState extends State<HomePage> {
                             Column(
                               children: [
                                 IconButton(
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.money),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Pension()));
+                                    },
+                                    icon: const Icon(Icons.person),
                                     color: Colors.white),
                                 const SizedBox(height: 5),
                                 const Text(
-                                  'Income',
+                                  'Pension',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 12,
@@ -170,22 +192,22 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ],
                             ),
-                            Column(
-                              children: [
-                                IconButton(
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.computer_rounded),
-                                    color: Colors.white),
-                                const SizedBox(height: 5),
-                                const Text(
-                                  'AI',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ],
-                            ),
+                            // Column(
+                            //   children: [
+                            //     IconButton(
+                            //         onPressed: () {},
+                            //         icon: const Icon(Icons.computer_rounded),
+                            //         color: Colors.white),
+                            //     const SizedBox(height: 5),
+                            //     const Text(
+                            //       'AI',
+                            //       style: TextStyle(
+                            //         color: Colors.white,
+                            //         fontSize: 12,
+                            //       ),
+                            //     ),
+                            //   ],
+                            // ),
                           ],
                         ),
                       ),
@@ -196,7 +218,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(8),
               child: Text(
                 "News Feeds ...",
                 style: GoogleFonts.acme(
@@ -206,9 +228,67 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            const NewsFeed(),
-            const NewsFeed(),
-            const NewsFeed(),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text(
+                "Local Feeds",
+                style: GoogleFonts.acme(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      NewsFeed(),
+                      NewsFeed(),
+                      NewsFeed(),
+                    ]),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text(
+                "International Feeds",
+                style: GoogleFonts.acme(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      NewsFeed(),
+                      NewsFeed(),
+                      NewsFeed(),
+                    ]),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text(
+                "FAQ ",
+                style: GoogleFonts.acme(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            const FAQ(),
+            const FAQ(),
           ],
         )),
       ),

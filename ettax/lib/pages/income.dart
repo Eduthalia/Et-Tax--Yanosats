@@ -1,7 +1,10 @@
 import 'package:ettax/components/my_nav_bar.dart';
 import 'package:ettax/components/tax_page_container.dart';
 import 'package:ettax/pages/customer_list.dart';
+import 'package:ettax/pages/pension.dart';
+import 'package:ettax/pages/with_holding_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Income extends StatefulWidget {
   const Income({super.key});
@@ -51,11 +54,12 @@ class _IncomeState extends State<Income> {
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height * 0.2,
                       decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
+                            color: const Color.fromARGB(255, 114, 172, 216)
+                                .withOpacity(0.6),
                             spreadRadius: 10,
                             blurRadius: 20,
                             offset: const Offset(
@@ -70,7 +74,7 @@ class _IncomeState extends State<Income> {
                       child: Text(
                         "Easy to Use",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
@@ -89,16 +93,20 @@ class _IncomeState extends State<Income> {
                                 children: [
                                   IconButton(
                                     icon: const Icon(Icons.money),
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     onPressed: () {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const CustomerList()));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const CustomerList()));
                                     },
                                   ),
                                   const SizedBox(height: 5),
                                   const Text(
                                     "Income",
                                     style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 12,
                                     ),
                                   ),
@@ -113,7 +121,7 @@ class _IncomeState extends State<Income> {
                                       child: const Text(
                                         "The Personal Income Tax Rate in Ethiopia stands at 35 percent. Personal Income Tax Rate in Ethiopia averaged 35.00 percent from 2006 until 2022",
                                         style: TextStyle(
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           fontSize: 12,
                                         ),
                                       ),
@@ -139,31 +147,55 @@ class _IncomeState extends State<Income> {
               //   title: "Easy to Use",
               //   routeMap: routeMap,
               // ),
-              TaxPageContainer(
-                text:
-                    "VAT is a consumption tax that is charged on the supply of taxable goods or services made in Ethiopia and on the importation of taxable goods or services into Ethiopia.",
-                iconData: Icons.percent,
-                iconname: "VAT",
-                title: "Convient",
-                routeMap: routeMap,
+              GestureDetector(
+                onTap: () {
+                   Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WithHolding()));
+                },
+                child: TaxPageContainer(
+                  text:
+                      "VAT is a consumption tax that is charged on the supply of taxable goods or services made in Ethiopia and on the importation of taxable goods or services into Ethiopia.",
+                  iconData: Icons.percent,
+                  iconname: "VAT",
+                  title: "Convient",
+                  routeMap: routeMap,
+                ),
               ),
-              TaxPageContainer(
-                text:
-                    "The Ethiopian Taxation system has two major categories: direct and indirect taxes. All tax types in the Ethiopian tax system are described and explained as follows. ",
-                iconData: Icons.oil_barrel_outlined,
-                iconname: "With-Holding",
-                title: "Time Saving",
-                routeMap: routeMap,
-                backgroundColor: Colors.black,
-                shadowColor: Colors.black.withOpacity(0.2),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WithHolding()));
+                },
+                child: TaxPageContainer(
+                  text:
+                      "The Ethiopian Taxation system has two major categories: direct and indirect taxes. All tax types in the Ethiopian tax system are described and explained as follows. ",
+                  iconData: Icons.oil_barrel_outlined,
+                  iconname: "With-Holding",
+                  title: "Time Saving",
+                  routeMap: routeMap,
+                  backgroundColor: Colors.white,
+                  shadowColor: Colors.black.withOpacity(0.2),
+                ),
               ),
-              TaxPageContainer(
-                text:
-                    "The contributions payable to the Private Organizations Pension Fund shall, based on the employee's salary, be: By the employer, 11%; • By the employee, 7%.",
-                iconData: Icons.person_2_rounded,
-                iconname: "Pension",
-                title: "Appealing",
-                routeMap: routeMap,
+              GestureDetector(
+                onTap: () {
+                   Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Pension()));
+                },
+                child: TaxPageContainer(
+                  text:
+                      "The contributions payable to the Private Organizations Pension Fund shall, based on the employee's salary, be: By the employer, 11%; • By the employee, 7%.",
+                  iconData: Icons.person_2_rounded,
+                  iconname: "Pension",
+                  title: "Appealing",
+                  routeMap: routeMap,
+                ),
               )
             ],
           ),

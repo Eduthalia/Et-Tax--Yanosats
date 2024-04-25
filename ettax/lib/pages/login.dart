@@ -17,8 +17,9 @@ class _LoginState extends State<Login> {
   signUp() async {
     final authService = Provider.of<AuthServices>(context, listen: false);
     try {
+      final email = "${emailcontroller.text}@gmail.com"; // Append "@gmail.com" to the email
       await authService.signInWithEmailAndPassword(
-          emailcontroller.text, passwordcontroller.text);
+          email, passwordcontroller.text);
     } catch (e) {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text(e.toString())));

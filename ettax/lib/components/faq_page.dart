@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class NewsFeed extends StatelessWidget {
-  final notes;
-  const NewsFeed({super.key, this.notes});
+class FAQ extends StatelessWidget {
+  const FAQ({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
-      padding: const EdgeInsets.all(0),
+      padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10.0),
@@ -26,17 +24,23 @@ class NewsFeed extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
             child: Row(
               children: [
-                const Icon(Icons.error, size: 30,),
                 const SizedBox(
                   width: 10,
                 ),
                 Text(
-                  "Important!",
+                  "Rate:",
                   style: GoogleFonts.acme(
-                    color: Colors.red,
+                    color: Color.fromARGB(255, 126, 182, 238),
                     fontSize: 25
                   ),
-                )
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Icon(Icons.star, color: Colors.yellow,),
+                const Icon(Icons.star, color: Colors.yellow,),
+                const Icon(Icons.star, color: Colors.yellow,),
+                const Icon(Icons.star, color: Colors.yellow,),
               ],
             ),
           ),

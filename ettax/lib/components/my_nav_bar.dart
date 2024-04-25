@@ -1,3 +1,4 @@
+import 'package:ettax/pages/ai_page.dart';
 import 'package:ettax/pages/home_page.dart';
 import 'package:ettax/pages/income.dart';
 import 'package:ettax/pages/invoics_page_create.dart';
@@ -42,8 +43,8 @@ class _MyNavBarState extends State<MyNavBar> {
           label: "Reminder",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.people_alt),
-          label: "Communites",
+          icon: Icon(Icons.computer),
+          label: "AI",
         ),
       ],
       onTap: (index) {
@@ -67,8 +68,9 @@ class _MyNavBarState extends State<MyNavBar> {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => const TransactionPending()));
             break;
-          case 4:
-            // Navigator.pushReplacementNamed(context, '/calls');
+          case 4: 
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => const ChatScreen()));
             break;
         }
       },
