@@ -110,7 +110,7 @@ class CustomersLists extends StatelessWidget {
                           const SizedBox(
                             width: 50,
                           ),
-                          _buildIconButton(Icons.numbers, vat, "VAT"),
+                          _buildIconButton(Icons.numbers, vat, "TAX"),
                         ],
                       ),
                     ),

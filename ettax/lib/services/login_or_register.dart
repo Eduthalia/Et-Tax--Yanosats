@@ -1,3 +1,4 @@
+import 'package:ettax/pages/info_page.dart';
 import 'package:flutter/material.dart';
 
 import '../pages/login.dart';
@@ -24,6 +25,6 @@ class _LoginOrRegisterState extends State<LoginOrRegister> {
     if (showLoginPage){
       return Login(ontap: togglePages,);
     }
-    return RegisterPage(ontap: togglePages,);
+    return InfoPage(ontap: togglePages,);
   }
 }

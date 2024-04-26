@@ -2,6 +2,7 @@ import 'package:ettax/components/my_nav_bar.dart';
 import 'package:ettax/components/tax_page_container.dart';
 import 'package:ettax/pages/customer_list.dart';
 import 'package:ettax/pages/pension.dart';
+import 'package:ettax/pages/vat_page.dart';
 import 'package:ettax/pages/with_holding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -152,7 +153,7 @@ class _IncomeState extends State<Income> {
                    Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const WithHolding()));
+                          builder: (context) => const VAT()));
                 },
                 child: TaxPageContainer(
                   text:

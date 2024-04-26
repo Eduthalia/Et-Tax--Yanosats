@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NewsFeed extends StatelessWidget {
-  final notes;
-  const NewsFeed({super.key, this.notes});
+  final String? title; // Define title as an optional parameter
+  final String? notes; // Define notes as an optional parameter
+  const NewsFeed({super.key, this.notes, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -31,23 +32,25 @@ class NewsFeed extends StatelessWidget {
                   width: 10,
                 ),
                 Text(
-                  "Important!",
+                  title ??"",
                   style: GoogleFonts.acme(
                     color: Colors.red,
-                    fontSize: 25
+                    fontSize: 20,
                   ),
                 )
               ],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(20),
+          Padding(
+            padding: const EdgeInsets.all(20),
             child: Text(
+              notes ?? // Use notes if provided, otherwise use a default message
                 "There's no need to have more than one app for breaking news, local news, world news, and more. Instead, you can use a news aggregator or news feed app to read news from the sources that matter most to you.Here are some of the best news apps for iPhone users to try.",
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.black,
-                ),),
+              style: const TextStyle(
+                fontSize: 15,
+                color: Colors.black,
+              ),
+            ),
           ),
           const Divider(
             color: Colors.grey,

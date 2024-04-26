@@ -8,14 +8,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import '../components/my_text_fied.dart';
 
-class WithHolding extends StatefulWidget {
-  const WithHolding({super.key});
+class VAT extends StatefulWidget {
+  const VAT({super.key});
 
   @override
-  State<WithHolding> createState() => _WithHoldingState();
+  State<VAT> createState() => _WithHoldingState();
 }
 
-class _WithHoldingState extends State<WithHolding> {
+class _WithHoldingState extends State<VAT> {
   FireStoreServices services = FireStoreServices();
   Uint8List? _image;
   void selectImage() async {
@@ -43,7 +43,7 @@ class _WithHoldingState extends State<WithHolding> {
             },
             icon: const Icon(Icons.arrow_back_ios)),
         title: Text(
-          "Withholdings",
+          "VAT",
           style: GoogleFonts.acme(
             fontSize: 25,
             fontWeight: FontWeight.w600,
@@ -125,7 +125,7 @@ class _WithHoldingState extends State<WithHolding> {
               padding: const EdgeInsets.fromLTRB(100, 0, 100, 0),
               child: GestureDetector(
                   onTap: saveInvoice,
-                  child: const MyButton(text: "Save Reciept"),),
+                  child: const MyButton(text: "Save VAT Report"),),
             )
           ],
         ),
